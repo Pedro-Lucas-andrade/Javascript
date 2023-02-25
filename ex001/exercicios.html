@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aqua;
+            font: normal 18pt Arial;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body> 
+  <h1>Iniciando estudos DOM</h1>
+  <p class="para">aqui vai o resultado</p>
+  <p>aprendendo a usar <strpong>DOM</strpong> em javascript</p>
+  <div id="msg">clique em mim</div>
+  <script>
+    var corpo= document.body
+    var tit=document.getElementsByTagName('h1')[0]
+    var p1=document.getElementsByTagName('p')[1]
+    var d= document.getElementById('msg')
+    var y= document.getElementsByClassName('para')[0]
+    document.writeln(p1.innerHTML) 
+    document.writeln(tit.innerHTML)
+    document.write(d.innerHTML)
+    p1.style.color= 'white'
+    corpo.style.backgroundColor= 'black'
+    tit.style.backgroundColor= 'green'
+     msg.style.backgroundColor= 'blue'
+     y.innerHTML='lucas'
+     
+    
+    
+     
+  </script>
+</body>
+</html>

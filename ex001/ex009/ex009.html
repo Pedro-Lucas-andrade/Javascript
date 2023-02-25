@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font: normal 15pt arial;
+            background-color: indigo;
+            color: #FFCD1C
+        }
+        input#botao{
+            background-color: #FFCD1C;
+        }
+    </style>
+</head>
+<body id="body">
+    <h1>Verificador de Votação</h1>
+    Digite o ano em que nasceu:
+    <input type="number" name="ano_nas" id="ano_nas">
+    <input id="botao" type="button" value="verificar" onclick="votar()">
+    <div id="res">Resultado</div>
+
+
+    <script>
+        /*Faça um programa que leia o ano de nascimento de uma pessoa, calcule a idade
+        dela e depois mostre se ela pode ou não votar.*/
+        function votar(){
+        var ano_nas=document.getElementById('ano_nas')
+        var ano_nasc=Number(ano_nas.value)
+        var res=document.getElementById('res')
+        var voto=2023-ano_nasc
+        if (voto>=18){
+           res.innerHTML='<p>Você <strong>está</strong> apto a votar</p>' 
+        }
+        else{
+            res.innerHTML='<p>Você <strong>não está</strong> apto a votar</p>'
+        }
+        }
+
+        
+
+    </script>
+</body>
+</html>
