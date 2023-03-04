@@ -15,8 +15,9 @@
         /*Faça um programa que leia o nome de uma pessoa e mostre uma mensagem de boasvindas para ela:*/
         function nome(){
         var nome = document.getElementById('nome')
+        var nome = nome.value
         var res= document.getElementById('res')
-        res.innerHTML=document.write(`Bem vindo ${nome}`)
+        res.innerHTML=document.write(`Olá ${nome}, é um prazer te conhecer!`)
         }
 
 

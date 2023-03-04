@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Resolutor de equação do 2ºgrau</h1>
+    Digite a equação: <br>
+    a:<input type="number" name="a" id="a"> 
+    b:<input type="number" name="b" id="b">
+    c:<input type="number" name="c" id="c">
+    <input type="button" value="calcular" onclick="calcular()" id="botao">
+    <div id="resposta"></div>
+
+    <script>
+        function calcular(){
+        var a = document.getElementById('a')
+        var a = Number(a.value)        
+        var b = document.getElementById('b')
+        var b = Number(b.value)
+        var c = document.getElementById('c')
+        var c = Number(c.value)
+        var delta = b**2-4*a*c
+        var resposta = document.getElementById('resposta')
+        if (b<0){
+        resposta.innerHTML = `${a}x² ${b}+${c}`
+        } else{
+            if (c<0){
+                resposta.innerHTML = `${a}x²+${b} ${c}`
+            } else{
+                if (b<0 && c<0){
+                    resposta.innerHTML = `${a}x² ${b} ${c}`
+                }
+            }
+        }
+        if (delta < 0){
+            resposta.innerHTML += (`Não há raízes reais para essa equação`)
+        } else {
+            var x1 = (-b + (delta)**(1/2))/2*a
+            var x2 = (-b - Math.sqrt(delta))/2*a
+            resposta.innerHTML += (`x1: ${x1} <br>
+            x2: ${x2}`)
+        }
+       
+        
+        }
+    </script>
+</body>
+</html>

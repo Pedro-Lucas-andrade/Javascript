@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           background-color: rgba(169, 169, 169, 0.289);
+            
+        }
+        h1{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            background-color: rgb(36, 195, 182);
+            width: 520px;
+            margin: auto;
+            margin-bottom: 2px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            padding: 2px;
+        }
+        main{
+            background-color: aquamarine;
+            width: 500px;
+            height: 100px;
+            margin: auto;
+            padding: 10px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        input{
+            width: 40px;
+            margin: 10px;
+            text-align: center;
+        }
+        input#botao{
+            width: 100px;
+            background-color: white;
+            color: rgb(46, 108, 108);
+        }
+    </style>
+</head>
+<body>
+    <h1>Pintar parede</h1>
+    <main>
+        largura(m):
+        <input type="number" name="largura" id="largura">
+        altura(m):
+        <input type="number" name="altura" id="altura">
+        <input type="button" value="calcular" onclick="tinta()" id="botao">
+        <div id="resposta"></div>
+    </main>
+
+    <script>
+        function tinta(){var largura = document.getElementById('largura')
+        var largura = Number(largura.value)
+        var altura = document.getElementById('altura')
+        var altura = Number(altura.value)
+        var area = altura*largura
+        var tinta = area/2
+        var resposta = document.querySelector('div#resposta')
+        resposta.innerHTML = `A área da parede é ${area} m². <br>`
+        resposta.innerHTML += `Quantidade de lata de tintas necessárias para pintar a parede são ${tinta} latas`}
+</script>
+</body>
+</html>
