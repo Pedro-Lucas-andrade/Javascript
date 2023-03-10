@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow ', sans-serif;
+            font-weight: normal;
+        }
+        header{
+            background-color: rgba(185, 185, 177, 0.385);
+            width: 500px;
+            margin: auto;
+            border-radius: 5px;
+            background-color: rgb(255, 0, 0);
+            color: rgb(255, 255, 255);
+            box-shadow: 1px 2px 5px black;
+        }
+        h1{
+            padding: 5px;
+            text-align: center;
+            text-shadow: 1px 1px 1px black;
+        }
+        main{
+            text-align: center;
+            width: 500px;
+            margin: auto;
+            margin-top: -15px;
+            border-radius: 5px;
+            padding-bottom: 10px;
+            box-shadow: 1px 1px 5px black;
+        }
+        p{
+            margin-bottom: -13px;
+            margin-top: 27px;
+            padding-top: 9px;
+        }
+        #velocidade{
+            width: 400px;
+            height: 30px;
+            border-radius: 5px;
+            
+        }
+        #botao{
+            margin-top: 20px;
+            width: 400px;
+            height: 50px;
+            border-radius: 20px;
+            border: none;
+            background-color: red;
+            color: white;
+            font-size: 1.2em;
+            
+        }
+        #resposta{
+            width: 400px;
+            height: 100px;
+            background-color: rgb(249, 249, 249);
+            border-radius: 1px solid black;
+            margin: auto;
+            margin-top: 20px;
+            box-shadow: 0px 1px 3px 0px black;
+            padding-top: 10px;
+
+        }
+        .multa{
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sistema de multas</h1>
+    </header>
+    <main>
+        <p>Qual velocidade do seu carro:</p> <br>
+        <input type="number" name="valocidade" id="velocidade"> <br>
+        <input type="button" value="verificar" onclick="multa()" id="botao">
+        <div id="resposta"></div>
+    </main>
+
+    <script>
+        function multa(){
+            var velocidade = document.getElementById('velocidade')
+            var velocidade = velocidade.value
+            var resposta = document.getElementById('resposta')
+            resposta.innerHTML=`A sua velocidade é de ${velocidade} km/h <br>`
+            var multa = (velocidade-80)*5
+            if ( velocidade > 80 ){
+                resposta.innerHTML+=`Você está <strong class="multa">MULTADO</strong> por execesso de velocidade. <br>
+                <strong class="multa">MULTA: ${multa} R$</strong>`
+            } else{
+                resposta.innerHTML = `Você está dentro da velocidade permitida, use sempre o cinto de segurança.`
+            }
+        }
+    </script>
+</body>
+</html>
