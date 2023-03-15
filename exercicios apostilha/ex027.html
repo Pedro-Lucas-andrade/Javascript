@@ -6,17 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    header{
+        background-color: black;
+        width: 400px;
+        margin: auto;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+    }
+    main{
+        background-color: rgba(0, 0, 0, 0.856);
+        width: 380px;
+        margin: auto;
+        color: white;
+        padding: 10px;
+        margin-top: -20px ;
+        border-radius: 5px;
+    }
+    input{
+        margin: 5px;
+        border-radius: 5px;
+    }
+</style>
 <body>
-    <h1>Sistemas de aluno</h1>
-    Digite o nome do aluno:
-    <input type="text" id="aluno"> <br>
-    nota 1:
-    <input type="number" name="n1" id="n1">
-    nota 2:
-    <input type="number" name="n2" id="n2">
-    <div id="resposta"></div>
+    <header>
+        <h1>Sistemas de aluno</h1>
+    </header>
+    <main>
+        Digite o nome do aluno:
+        <input type="text" id="aluno"> <br>
+        nota 1:
+        <input type="number" name="n1" id="n1"> <br>
+        nota 2:
+        <input type="number" name="n2" id="n2">
+        <input type="button" value="calcular" onclick="media()">
+        <div id="resposta"></div>
+    </main>
 
     <script>
+
+    function media(){
         var aluno = document.getElementById('aluno')
         var aluno = Number(aluno.value)
         var n1 = document.getElementById('n1')
@@ -29,9 +59,10 @@
             resposta.innerHTML = `APROVADO`
         } else if (media >=5 && media <7){
             resposta.innerHTML = `RECUPERAÇÃO`
-        } else if{
+        } else {
             resposta.innerHTML = `REPROVADO`
         }
+    }
     </script>
 </body>
 </html>
