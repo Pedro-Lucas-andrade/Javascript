@@ -19,17 +19,17 @@
         function terreno(){
             var largura = document.getElementById('largura')
             var largura = Number(largura.value)
-            var comprimento = document.getElement('comprimento')
+            var comprimento = document.getElementById('comprimento')
             var comprimento = Number(comprimento.value)
             var area = comprimento*largura
             var resposta = document.getElementById('resposta')
 
             if ( area > 500){
-                reposta.innerHTML = `TERRENO VIP`
+                resposta.innerHTML = `TERRENO VIP`
             } else if (area <=500 && area >=100){
-                reposta.innerHTML = `TERRENO MASTER`
+                resposta.innerHTML = `TERRENO MASTER`
             } else if( area < 100){
-                reposta.innerHTML = `TERRENO POPULAR`
+                resposta.innerHTML = `TERRENO POPULAR`
             }
         }
     </script>
