@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reajuste Salárial</h1>
+    Digite seu salário atual:
+    <input type="number" name="salario" id="salario">
+    
+    <input type="radio" name="sexo" id="sexoM">
+    Homem
+    <input type="radio" name="sexo" id="sexoF"> 
+    Mulher <br>
+    Digite o tempo que trabalha na empresa:
+    <input type="number" name="anosdeservico" id="anosdeservico">
+    <input type="button" value="calcular" onclick="reajuste()">
+    <div id="reajuste"></div>
+
+    <script>
+        function reajuste() {
+            var salario = document.getElementById('salario')
+            var salario = Number(salario.value)
+            var sexoM = Boolean(document.getElementById('sexoM').checked)
+            var sexoF = Boolean(document.getElementById('sexoF').checked)
+            var anosdeservico = document.getElementById('anosdeservico')
+            var anosdeservico = Number(anosdeservico.value)
+            var reajuste = document.getElementById('reajuste')
+
+            if (sexoF == true){
+                if ( anosdeservico < 15){
+                    var novo_salario = salario*1.05
+                } else if ( anosdeservico >= 15 && anosdeservico <= 20){
+                    var novo_salario = salario*1.12
+                } else if(anosdeservico > 20){
+                    var novo_salario = salario*1.23
+                }
+            } else if( sexoM == true){
+                if ( anosdeservico < 20){
+                    var novo_salario = salario*1.03
+                } else if ( anosdeservico >= 20 && anosdeservico <= 30){
+                    var novo_salario = salario*1.13
+                } else if(anosdeservico > 30){
+                    var novo_salario = salario*1.25
+                }
+            }
+            reajuste.innerHTML = `Seu salário atual é de ${salario} R$, você trabalhou ${anosdeservico} anos na empresa, e seu novo salário é de ${novo_salario.toFixed(2)} R$`
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ano bissexto</h1>
+    Digite a quantidade de dias do ano desejado:
+    <input type="number" name="dias_ano" id="dias_ano">
+    <input type="button" value="verificar" onclick="bissexto()">
+    <div id="resposta"></div>
+
+    <script>
+       function bissexto() {var quantidade_de_dias_do_ano = document.getElementById('dias_ano')
+        var quantidade_de_dias_do_ano = Number(quantidade_de_dias_do_ano.value)
+        var resposta = document.getElementById('resposta')
+
+        if (quantidade_de_dias_do_ano == 365){
+            resposta.innerHTML = `O ano não é bissexto`
+        } else if (quantidade_de_dias_do_ano == 366){
+            resposta.innerHTML = `O ano é bissexto`
+        } else if( quantidade_de_dias_do_ano != 365 || quantidade_de_dias_do_ano != 366){
+            resposta.innerHTML = `Quantidade de dias inválidos, tente novamente!!!`
+        }
+        }
+    </script>
+    
+</body>
+</html>

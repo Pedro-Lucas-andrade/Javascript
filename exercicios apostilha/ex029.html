@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #funcionario{
+        width: 300px;
+        margin-bottom: 10px;
+        margin-left: 25px;
+    }
+    #salario, #servico{
+        width: 100px;
+    }
+</style>
+<body>
+    <h1>Reajuste de salário</h1>
+    Funcionário:
+    <input type="text" id="funcionario"> 
+    Salário:
+    <input type="number" name="salario" id="salario"> <br>
+    Anos de serviço:
+    <input type="number" name="servico" id="servico"> <br>
+    <input type="button" value="Calcular" onclick="novo_salario()"> 
+    <div id="reajuste"></div>
+
+    <script>
+        function novo_salario(){
+            var funcionario = document.getElementById('funcionario')
+            var funcionario = funcionario.value
+            var salario = document.getElementById('salario')
+            var salario = Number(salario.value)
+            var servico = document.getElementById('servico')
+            var servico = Number(servico.value)
+            var reajuste = document.getElementById('reajuste') 
+
+            if (servico <= 3){
+                var novo_salario = salario*1.03
+                reajuste.innerHTML = `O novo salário do funcionário ${funcionario} é de ${novo_salario} R$.`
+            } else if(servico>3 && servico <=10){
+                var novo_salario = salario*1.125
+                reajuste.innerHTML = `O novo salário do funcionário ${funcionario} é de ${novo_salario} R$.`
+            } else{
+                var novo_salario = salario*1.2
+                reajuste.innerHTML = `O novo salário do funcionário ${funcionario} é de ${novo_salario} R$.`
+            }
+        }
+    </script>
+</body>
+</html>
