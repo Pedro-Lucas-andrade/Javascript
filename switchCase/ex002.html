@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Digite o número corresponte ao dia da semana: <input type="number" name="dia" id="dia">
+    <input type="button" value="verificar" onclick="diadasemana()"></p>
+    <p>
+        <ol>
+            <li>domingo</li>
+            <li>segunda</li>
+            <li>terça</li>
+            <li>quarta</li>
+            <li>quinta</li>
+            <li>sexta</li>
+            <li>sábado</li>
+        </ol>
+    </p>
+    <p>
+        <div id="resposta"></div>
+    </p>
+
+    <script>
+        function diadasemana(){
+            var dia = Number(document.getElementById('dia').value)
+            var resposta = document.getElementById('resposta')
+
+            switch (dia){
+                case 1:
+                    resposta.innerHTML = `Hoje é domingo, final de semana.`
+                    break
+                case 2:
+                    resposta.innerHTML = `Hoje é segunda, dia útil.`
+                    break
+                case 3: 
+                    resposta.innerHTML = `Hoje é terça, dia útil`
+                    break
+                case 4:
+                    resposta.innerHTML = `Hoje é quarta, dia útil.`
+                    break
+                case  5:
+                    resposta.innerHTML = `Hoje é quinta, dia útil.`
+                    break
+                case 6:
+                    resposta.innerHTML = `Hoje é sexta, dia útil.`
+                    break
+                case 7: 
+                    resposta.innerHTML = `Hoje é sábado, final de semana.`
+                    break
+                default:
+                    resposta.innerHTML = `[ERRO], dia inválido.`
+            }
+        }
+    </script>
+</body>
+</html>

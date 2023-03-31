@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        color: aliceblue;
+        background-color: rgb(131, 15, 15);
+        text-align: center;
+        width: 520px;
+        margin: auto;
+        margin-bottom: 1px;
+        border-radius: 10px 10px 0px 0px;
+        font: normal 30px arial;
+    }
+    section{
+        font-family:'Courier New', Courier, monospace;
+        color: aliceblue;
+        background-color: rgb(138, 11, 11);
+        width: 500px;
+        margin: auto;
+        padding: 10px;
+        border-radius: 0px 0px 10px 10px;
+        box-shadow: 2px 2px 5px black;
+    }
+    #n1,#n2{
+        width: 50px;
+        border-radius: 7px;
+    }
+    #botao{
+        margin-top: 10px;
+        border-radius: 7px;
+        border: none;
+        width: 300px;
+        height: 30px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    #text{
+        text-align: center;
+    }
+</style>
+<body>
+    <h1>Calculadora</h1>
+    <section>
+        <p>Digite um número:
+            <input type="number" name="n1" id="n1"> 
+        Digite outro número:
+            <input type="number" name="n2" id="n2">
+        </p>
+        <p>Qual operação deseja fazer entre eles:</p>
+        <p>
+            <input type="radio" name="operação" id="soma"> soma
+            <input type="radio" name="operação" id="subtração"> Subtração
+            <input type="radio" name="operação" id="multiplicação"> Multiplicação
+            <input type="radio" name="operação" id="divisão"> Divisão <br>
+            <p id="text"><input type="button" value="verificar" onclick="calculadora()" id="botao"></p>
+        </p>
+        <p><div id="resposta"></div></p>
+    </section>
+
+    <script>
+        function calculadora(){
+            var n1 = Number(document.getElementById('n1').value)
+            var n2 = Number(document.getElementById('n2').value)
+            var soma = Boolean(document.getElementById('soma').checked)
+            var subtração = Boolean(document.getElementById('subtração').checked)
+            var multiplicação = Boolean(document.getElementById('multiplicação').checked)
+            var divisão = Boolean(document.getElementById('divisão'))
+            var s= n1+n2
+            var sub= n1-n2
+            var mult = n1*n2 
+            var div = n1/n2
+            var resposta = document.getElementById('resposta')
+            if(soma == true){
+                resposta.innerHTML = `A soma vale ${s}`
+            } else if (subtração == true){
+                resposta.innerHTML = `A subtração vale ${sub}`
+            } else if(multiplicação == true){
+                resposta.innerHTML = `A multplicação vale ${mult}`
+            } else {
+                resposta.innerHTML = `A divisão vale ${div}`
+            }
+            
+        }
+    </script>
+</body>
+</html>
