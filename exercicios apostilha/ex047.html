@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>47) Desenvolva um aplicativo que mostre na tela o resultado da expressão 500 + 
+        450 + 400 + 350 + 300 + ... + 50 + </p>
+
+    <input type="button" value="começar" onclick="somar()">
+    <div id="res"></div>
+
+    <script>
+        function somar(){
+            var res = document.getElementById('res')
+             var c = 500
+             var soma = 0
+            while ( c >= 50){
+                res.innerHTML += `${c}`
+                if ( c > 50){
+                    res.innerHTML += ` + `
+                } else {
+                    res.innerHTML += ` = `
+                }
+                soma += c
+                c-=50
+            }
+            res.innerHTML += ` ${soma}`
+        }
+    </script>
+</body>
+</html>
