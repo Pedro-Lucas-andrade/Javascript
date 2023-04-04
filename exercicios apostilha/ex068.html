@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <label for="sexo">Sexo:</label>
+        <input type="radio" name="sexo" id="homem"> Homem
+        <input type="radio" name="sexo" id="mulher"> Mulher <br>
+        <label for="peso">Peso: </label>
+        <input type="number" name="Peso" id="Peso">
+        <input type="button" value="verificar" onclick="verificar()">
+    </p>
+    <p>
+        <div id="resultado"></div>
+    </p>
+
+    <script>
+        function verificar(){
+            
+            var resultado = document.getElementById('resultado')
+            var m = 0
+            var obesidade = 0
+            var somaP = 0
+            var mediaP = somaP/m
+            var maior = 0
+
+            for (  var c = 1; c <= 8; c++){
+                var homem = Boolean(document.getElementById('homem').checked)
+                var mulher = Boolean(document.getElementById('mulher').checked)
+                var peso = Number(document.getElementById('peso').value)
+
+                if ( mulher == true){
+                    m++
+                    somaP +=peso
+                }
+                if ( homem == true && peso > 100){
+                    obesidade++
+                }
+                 
+                if ( homem == true){
+                    if (peso > maior){
+                        maior = peso
+                    }
+                }
+                 
+            }
+            resultado.innerHTML += `Mulheres cadastradas: ${m}`
+            resultado.innerHTML += `Homens com mais de 100 kg: ${obesidade}`
+            resultado.innerHTML += `Media de peso Mulheres: ${media}`
+            resultado.innerHTML += `Maior peso homens: ${maior}`
+            
+        }
+
+    </script>
+</body>
+</html>

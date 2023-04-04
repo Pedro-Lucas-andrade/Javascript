@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    
+    <p>
+        Digite um número: 
+        <input type="number" name="n1" id="n1">
+        <input type="button" value="gerar tabuada" onclick="tabuada()">
+    </p>
+    <p>
+        <select name="tabuada" id="tabuada" size="10">Digite um valor acima</select>
+    </p>
+
+    <script>
+        function tabuada(){
+            let n1 = Number(document.getElementById('n1').value)
+            let tab = document.getElementById('tabuada')
+            tab.innerHTML = ''
+            for ( var c = 1; c <= 10; c++){
+                var item = document.createElement('option')
+                item.text = `${n1} x ${c} = ${n1*c}`
+
+                tab.appendChild(item)
+            }
+        }
+    </script>
+</body>
+</html>

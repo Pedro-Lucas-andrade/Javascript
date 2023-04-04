@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="contar" onclick="contar()">
+    <p><select name="contagem" id="contagem" size="11"> clique acima para contar</select></p>
+
+    <script>
+       function contar() {
+        var contagem = document.getElementById('contagem')
+
+        for ( var c = 100; c >= 0; c-=10){
+            var select = document.createElement("Option")
+            select.text = `${c}`
+            contagem.appendChild(select)
+        }}
+    </script>
+</body>
+</html>
