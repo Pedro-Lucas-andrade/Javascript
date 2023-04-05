@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=7, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        display: block;
+        width: 400px;
+        height: 70px;
+        border-radius: 30px;
+        border: none;
+        font-size: 30px;
+        background-color: red;
+        color: white;
+        margin: auto;
+    }
+    input:hover{
+        width: 420px;
+        height: 75px;
+        font-size: 2em;
+    }
+    
+</style>
+<body>
+    <input type="button" value="contar" onclick="contar()">
+    <div id="res"></div>
+
+    <script>
+        function contar(){
+            var res = document.getElementById('res')
+            var c = 0
+            while ( c <= 18){
+                res.innerHTML += `${c} `
+                c+=3
+            }
+            res.innerHTML += `Acabou!`
+        }
+    </script>
+</body>
+</html>
