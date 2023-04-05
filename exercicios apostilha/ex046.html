@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+       46º) Crie um programa que calcule e mostre na tela o resultado da soma entre 6 + 
+        8 + 10 + 12 + 14 + ... + 98 + 100
+    </p>
+
+    <input type="button" value="começar" onclick="somar()">
+    <div id="res"></div>
+
+    <script>
+        function somar(){
+            var res = document.getElementById('res')
+            res.innerHTML = ''
+            var c = 6
+            var soma = 0
+            while (c <= 100){
+                res.innerHTML += `${c}`
+                if (c < 100){
+                res.innerHTML += ` + `
+                }
+                soma += c
+                c+=2
+            }
+            res.innerHTML += ` <br> A soma é ${soma}`
+        }
+    </script>
+</body>
+</html>

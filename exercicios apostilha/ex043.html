@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Desenvolva um algoritmo que mostre uma contagem regressiva de 30 até 1, 
+    marcando os números que forem divisíveis por 4
+
+    <input type="button" value="começar" onclick="contar()">
+    <div id="res"></div>
+
+    <script>
+        function contar(){
+        var res = document.getElementById('res')
+        var c = 30
+        
+        while (c >= 1 ){
+            if (c % 4 != 0){
+                res.innerHTML += `${c} `
+            } else  {
+                res.innerHTML += `[${c}] `
+            }
+            c--
+        }
+        }
+
+    </script>
+</body>
+</html>

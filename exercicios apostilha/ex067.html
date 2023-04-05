@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Digite um número:
+        <input type="number" name="n1" id="n1">
+        <input type="button" value="contar" onclick="contar()">
+    </p>
+    <p>
+        <select name="cont" id="cont"></select>
+    </p>
+
+    <script>
+        function contar(){
+            let n1 = Number(document.getElementById('n1').value)
+            let cont = document.getElementById('cont')
+            cont.size = n1+1
+            for ( let c = 0; c <= n1; c++){
+                let item = document.createElement('option')
+                item.text = `${c}`
+                cont.appendChild(item)
+            }
+        }
+    </script>
+</body>
+</html>

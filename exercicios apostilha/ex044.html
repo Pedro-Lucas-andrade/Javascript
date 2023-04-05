@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Crie um algoritmo que leia o valor inicial da contagem, o valor final e o 
+incremento, mostrando em seguida todos os valores no intervalo:
+Ex: Digite o primeiro Valor: 3
+Digite o último Valor: 10
+Digite o incremento: 2
+Contagem: 3 5 7 9 Acabou!
+
+    <p>
+        Digite o valor inicial:
+        <input type="number" name="n1" id="n1">
+    </p>
+    <p>
+        Digite o valor final:
+        <input type="number" name="n2" id="n2">
+    </p>
+    <p>
+        Digite o incremento:
+        <input type="number" name="passo" id="passo">
+    </p>
+    <p>
+        <input type="button" value="contar" onclick="contar( )">
+    </p>
+    <div id="res"></div>
+    <script>
+        function contar(){
+            var inicio = Number(document.getElementById('n1').value)
+            var fim = Number(document.getElementById('n2').value)
+            var passo = Number(document.getElementById('passo').value)
+            var res = document.getElementById('res')
+
+            var c  = inicio
+            while ( c <= fim){
+                res.innerHTML += `${c} `
+                c+=passo
+            }
+
+
+        }
+    </script>
+</body>
+</html>
