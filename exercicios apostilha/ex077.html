@@ -22,9 +22,10 @@
             var pessoa = []
             var nome = document.getElementById('nome')
             for ( var c = 1; c <= 7; c++){
+                nome.innertext = ''
                 pessoa[c] = nome
             }
-            res.innerHTML = `${nome}`
+            res.innerHTML += `${pessoa}`
         }
     </script>
 </body>
