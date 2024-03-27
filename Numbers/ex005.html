@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Escreva uma função JavaScript para formatar um número até as casas decimais especificadas.*/
+
+        const numero = Number(prompt("Digite um número: "));
+        const decimais = Number(prompt("Digite o número de casas decimais: "));
+
+        const numeroFormatado = (numero, decimais) => {
+            return numero.toFixed(decimais);
+        }
+
+        alert(numeroFormatado(numero, decimais));
+    </script>
+</body>
+</html>

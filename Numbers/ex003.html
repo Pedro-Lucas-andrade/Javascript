@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Escreva uma função JavaScript para converter um número decimal em um número binário, hexadecimal ou octal. */
+        
+        const numDec = Number(prompt("Digite um número em decimal: "));
+        const menu = Number(prompt("Digite para qual base deseja converter: \n1-binário\n2-octal\n3-hexadecimal"));
+        
+        const converter = (numDec, menu) => {
+          switch (menu){
+              case 1:
+                return numDec.toString(2);
+                break;
+              case 2:
+                return numDec.toString(8);
+                break;
+              case 3:
+                return numDec.toString(16);
+                break;
+          }
+        }
+        
+        const numConvertido = converter(numDec, menu);
+        
+        alert(numConvertido);
+        
+        </script>
+        
+</body>
+</html>
